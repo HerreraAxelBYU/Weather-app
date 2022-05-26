@@ -64,13 +64,14 @@ const consultarAPI = async (ciudad, pais) => {
 */
     datos = await url.json();
     console.log(datos)
-
     if(datos.cod === "404") {
-        mostrarError('City not found')
+        mostrarError('City not Found')
       } else {
         mostrarClima(datos)
       }
-}
+    }
+
+
 
 const mostrarClima = (datos) => {
     let { name, main: { temp, temp_max, temp_min }} = datos;
@@ -85,11 +86,12 @@ const mostrarClima = (datos) => {
     let min = kelvinToCentigrados(temp_min);
     const weather_type = type_weather.main;
     
-    /** CITY NAME **/
+
+    /** CREATING THE TEMPERATURE **/
     const cityname = document.createElement('p');
     cityname.innerHTML = `Weather in: ${name}`;
     cityname.classList.add('font-bold', 'text-2xl')
-    /** CREATING THE TEMPERATURE **/
+
     const description = document.createElement('p');
     description.textContent = type_weather.description;
 
