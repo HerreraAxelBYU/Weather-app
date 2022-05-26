@@ -65,7 +65,12 @@ const consultarAPI = async (ciudad, pais) => {
     datos = await url.json();
     console.log(datos)
 
-    mostrarClima(datos);
+    if(datos.cod === "404") {
+        mostrarError('Ciudad No Encontrada')
+      } else {
+        mostrarClima(datos)
+      }
+    }
 }
 
 const mostrarClima = (datos) => {
