@@ -69,7 +69,7 @@ const consultarAPI = async (ciudad, pais) => {
 }
 
 const mostrarClima = (datos) => {
-    let { main: { temp, temp_max, temp_min }} = datos;
+    let { name, main: { temp, temp_max, temp_min }} = datos;
     const {weather: {0: type_weather,}} = datos
 
     const farenheit_btn = document.querySelector('#farenheit');
