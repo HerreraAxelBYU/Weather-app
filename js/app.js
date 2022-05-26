@@ -70,7 +70,6 @@ const consultarAPI = async (ciudad, pais) => {
       } else {
         mostrarClima(datos)
       }
-    }
 }
 
 const mostrarClima = (datos) => {
