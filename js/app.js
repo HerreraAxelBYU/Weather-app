@@ -81,7 +81,10 @@ const mostrarClima = (datos) => {
     let min = kelvinToCentigrados(temp_min);
     const weather_type = type_weather.main;
     
-
+    /** CITY NAME **/
+    const cityname = document.createElement('p');
+    cityname.innerHTML = `Weather in: ${name}`;
+    cityname.classList.add('font-bold', 'text-2xl')
     /** CREATING THE TEMPERATURE **/
     const description = document.createElement('p');
     description.textContent = type_weather.description;
@@ -105,6 +108,7 @@ const mostrarClima = (datos) => {
     icons(weather_type, resultadoDiv);
 
     resultadoDiv.classList.add('text-center', 'text-white');
+    resultadoDiv.appendChild(cityname);
     resultadoDiv.appendChild(description);
     resultadoDiv.appendChild(actual);
     resultadoDiv.appendChild(tempMax);
