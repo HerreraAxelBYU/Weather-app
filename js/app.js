@@ -19,7 +19,7 @@ const buscarClima = (e) => {
     // VALIDATING THE FORM
     if (ciudad === '' || pais === '') {
         // Error
-        mostrarError('Ambos campos son obligatorios');
+        mostrarError('Both fields are required');
         return;
     }
 
@@ -66,7 +66,7 @@ const consultarAPI = async (ciudad, pais) => {
     console.log(datos)
 
     if(datos.cod === "404") {
-        mostrarError('Ciudad No Encontrada')
+        mostrarError('City not found')
       } else {
         mostrarClima(datos)
       }
